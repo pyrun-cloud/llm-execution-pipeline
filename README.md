@@ -29,14 +29,24 @@ The notebook provides a simple Python script that:
     ```
     Keep this terminal window open while using the notebook.
 
-3.  **Pull the LLM Model:**
+3.  **Run Ollama Server:**
+    Before trying to pull the model, ensure that you have the env variable MODEL_NAME:
+    ```bash
+    echo $MODEL_NAME
+    ```
+    If you don't have the env variable MODEL_NAME execute this in the terminal and after try again to see if you have the variable
+    ```bash
+    . .env
+    ```
+
+4.  **Pull the LLM Model:**
     The notebook is configured to use `gemma3:4b-it-qat`. Download it using the Ollama CLI:
     ```bash
-    ollama pull gemma3:4b-it-qat
+    ollama pull $MODEL_NAME
     ```
     *Note: This model requires approximately 3.5 GiB of available system memory.* You can change the `MODEL_NAME` variable in the second code cell of the notebook to use a different model available through Ollama (e.g., `llama3`, `mistral`, `phi3`). Make sure to pull the desired model first using `ollama pull <model_name>`.
 
-4.  **Run the Notebook:**
+5.  **Run the Notebook:**
     *   Open the [`LLM_Execution.ipynb`](LLM_Execution.ipynb) file.
     *   Run the code cells sequentially.
     *   Type your prompt and press Enter. The model's response will stream below.
