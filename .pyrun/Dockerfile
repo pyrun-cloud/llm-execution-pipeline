@@ -14,6 +14,7 @@ RUN pip install --upgrade --ignore-installed pip wheel six setuptools \
     && pip install --upgrade --no-cache-dir --ignore-installed \
 	ollama \
     ipykernel \
-    ipywidgets 
+    ipywidgets \
+    python-dotenv
 
 RUN sudo apt-get update
